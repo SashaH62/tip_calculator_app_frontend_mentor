@@ -1,44 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
 
-  Bill
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./style.css" />
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+    <!-- JavaScript File -->
+    <script src="./script.js" defer></script>
+    <title>Sasha Herman | Tip calculator app</title>
+  </head>
+  <body>
+    <header>
+      <h1>SPLI<br />TTER</h1>
+    </header>
+    <main>
+      <div class="container">
+        <!-- Bill Input section -->
+        <div class="col bill-section">
+          <div class="bill">
+            <label for="bill-amount">Bill</label>
+            <input
+              type="number"
+              class="bill-input"
+              placeholder="0"
+              name="bill-amount"
+            />
+            <img src="./images/icon-dollar.svg" class="dollar-sign" alt="" />
+          </div>
+          <div class="select-tip">
+            <h3>Select Tip %</h3>
+            <div class="tip-selectors">
+              <button class="tip-percentage-btn btn" id="fivePercent">
+                5%
+              </button>
+              <button class="tip-percentage-btn btn" id="tenPercent">
+                10%
+              </button>
+              <button class="tip-percentage-btn btn" id="fifteenPercent">
+                15%
+              </button>
+              <button class="tip-percentage-btn btn" id="twentyFivePercent">
+                25%
+              </button>
+              <button class="tip-percentage-btn btn" id="fiftyPercent">
+                50%
+              </button>
+              <input
+                type="text"
+                placeholder="Custom"
+                class="custom-tip-percentage"
+              />
+            </div>
 
-  Number of People
+            <label for="numOfPeople">Number of People</label>
+            <input type="number" placeholder="0" name="numOfPeople" />
+          </div>
+        </div>
 
-  Tip Amount
-  / person
+        <div class="col output-section">
+          <div class="outputs">
+            <div class="total-amount">
+              <h4>
+                Tip Amount <span class="sub-title"><br />/ person</span>
+              </h4>
+              <h2 class="total-output">$4.27</h2>
+            </div>
+            <div class="total">
+              <h4>
+                Total <span class="sub-title"><br />/ person</span>
+              </h4>
+              <h2 class="total-output">$4.27</h2>
+            </div>
+          </div>
+          <button class="reset-btn btn">Reset</button>
+        </div>
+      </div>
+    </main>
 
-  Total
-  / person
-
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Sasha Herman</a>.
+    </div>
+  </body>
 </html>
