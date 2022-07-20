@@ -36,12 +36,14 @@
         <div class="col bill-section">
           <div class="bill">
             <label for="bill-amount">Bill</label>
+            <h4 class="warning bill-warning">Can't be zero</h4>
             <input
               type="number"
               class="bill-input"
               placeholder="0"
               name="bill-amount"
             />
+
             <img src="./images/icon-dollar.svg" class="dollar-sign" alt="" />
           </div>
           <div class="select-tip">
@@ -63,14 +65,21 @@
                 50%
               </button>
               <input
-                type="text"
+                type="number"
                 placeholder="Custom"
                 class="custom-tip-percentage"
               />
             </div>
 
             <label for="numOfPeople">Number of People</label>
-            <input type="number" placeholder="0" name="numOfPeople" />
+            <h4 class="warning people-warning">Can't be zero</h4>
+            <input
+              type="number"
+              placeholder="0"
+              name="numOfPeople"
+              class="numPeople"
+              min="0"
+            />
           </div>
         </div>
 
@@ -80,13 +89,13 @@
               <h4>
                 Tip Amount <span class="sub-title"><br />/ person</span>
               </h4>
-              <h2 class="total-output">$4.27</h2>
+              <h2 class="total-tip">$0</h2>
             </div>
             <div class="total">
               <h4>
                 Total <span class="sub-title"><br />/ person</span>
               </h4>
-              <h2 class="total-output">$4.27</h2>
+              <h2 class="total-output">$0</h2>
             </div>
           </div>
           <button class="reset-btn btn">Reset</button>

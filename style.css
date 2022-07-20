@@ -19,6 +19,10 @@ body {
   background: var(--background);
   font-family: "Space Mono", sans-serif;
   color: var(--font);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .container {
@@ -91,6 +95,7 @@ input {
   width: 100%;
   background: hsl(189, 41%, 97%);
   margin-bottom: 1.875rem;
+  text-align: right;
 }
 
 input:focus {
@@ -100,6 +105,13 @@ input:focus {
 
 input::placeholder {
   text-align: right;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 /* Header Title */
@@ -131,6 +143,14 @@ header h1 {
   position: absolute;
   top: 40px;
   left: 25px;
+}
+
+.warning {
+  content: "Can't be zero";
+  font-size: 16px;
+  display: none;
+  float: right;
+  color: red;
 }
 
 /* Tip Selectors */
@@ -182,6 +202,7 @@ input.custom-tip-percentage {
   justify-content: space-between;
 }
 
+.total-tip,
 .total-output {
   font-size: 36px;
   color: var(--primary);
