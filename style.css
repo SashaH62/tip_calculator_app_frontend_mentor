@@ -22,12 +22,12 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .container {
   background: #fff;
-  padding: 1.875rem;
+  padding: 2.25rem;
   border-radius: 1.565rem;
   margin: 0 auto;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -35,7 +35,7 @@ body {
 
 @media (min-width: 1024px) {
   .container {
-    max-width: 1000px;
+    max-width: 960px;
     display: flex;
     justify-content: space-between;
   }
@@ -77,11 +77,27 @@ h3 {
   color: var(--secondary);
 }
 
+.tip-percentage-btn:active {
+  transform: translateY(1px);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 15px 0px;
+}
+
 .reset-btn {
+  font-size: 21px;
   width: 100%;
   background: var(--primary);
   color: var(--secondary);
   text-transform: uppercase;
+  transition: 0.1s all ease-in-out;
+}
+
+.reset-btn:hover {
+  background: var(--background);
+}
+
+.reset-btn:active {
+  transform: translateY(2px);
+  box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 12px 0px;
 }
 
 .selected {
@@ -96,6 +112,7 @@ input {
   background: hsl(189, 41%, 97%);
   margin-bottom: 1.875rem;
   text-align: right;
+  color: var(--secondary);
 }
 
 input:focus {
@@ -114,16 +131,19 @@ input[type="number"]::-webkit-outer-spin-button {
   appearance: none;
 }
 
-/* Header Title */
-
-header {
-  text-align: center;
-  padding: 30px;
+label {
+  margin-bottom: 20px;
 }
 
-header h1 {
+/* Header Title */
+
+.heading {
+  text-align: center;
+  padding: 0 30px 30px;
   letter-spacing: 10px;
   font-size: 24px;
+  margin-bottom: 50px;
+  color: var(--secondary);
 }
 
 /* Bill Section */
@@ -138,11 +158,23 @@ header h1 {
 }
 
 .dollar-sign {
-  width: 13px;
+  width: 12px;
   height: auto;
   position: absolute;
   top: 40px;
-  left: 25px;
+  left: 15px;
+}
+
+.num-people-section {
+  position: relative;
+}
+
+.number-people-sign {
+  width: 13px;
+  height: auto;
+  position: absolute;
+  top: 42px;
+  left: 15px;
 }
 
 .warning {
@@ -204,7 +236,7 @@ input.custom-tip-percentage {
 
 .total-tip,
 .total-output {
-  font-size: 36px;
+  font-size: 42px;
   color: var(--primary);
 }
 

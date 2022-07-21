@@ -11,11 +11,15 @@ const numPeopleWarning = document.querySelector(".people-warning");
 let tipPercentage = 0;
 let bill = 0;
 
+// Remove active styling from buttons when not selected
+
 function removeClass(arr) {
   arr.forEach((button) => {
     button.classList.remove("selected");
   });
 }
+
+// Remove styling from inputs when input is valid
 
 const resetWarnings = () => {
   billWarning.style.display = "";
@@ -23,6 +27,8 @@ const resetWarnings = () => {
   numPeopleWarning.style.display = "";
   numPeopleInput.style.border = "";
 };
+
+// Reset tip calculator to initialised state
 
 const resetCalc = () => {
   totalTip.innerHTML = "$0";
@@ -35,13 +41,13 @@ const resetCalc = () => {
   resetWarnings();
 };
 
+// Output calculated tip and total per person
+
 const displayTipTotal = (total, people, perc) => {
-  console.log("Display Tip", perc);
   let tipPerPerson = 0;
   let totalPerPerson = 0;
   tipPerPerson = parseFloat(((total * (perc / 100)) / people).toFixed(2));
   totalPerPerson = parseFloat((total / people + tipPerPerson).toFixed(2));
-  console.log(total, people, perc);
   totalTip.innerHTML = `$ ${tipPerPerson}`;
   totalAmount.innerHTML = `$ ${totalPerPerson}`;
 };
@@ -91,6 +97,7 @@ function retrieveInput() {
 function calcAmount() {
   retrieveInput();
   if (validateForms()) {
+    // If function returns true, output will be displayed
     displayTipTotal(bill, numPeople, tipPercentage);
   }
 }
@@ -109,16 +116,19 @@ tipButtons.forEach((tip) => {
   tip.addEventListener("click", tipButtonEvent);
 });
 
+// Update values as user inputs value
 customField.addEventListener("input", () => {
   removeClass(tipButtons);
   tipPercentage = parseFloat(customField.value);
   calcAmount();
 });
 
-resetBtn.addEventListener("click", resetCalc);
-
 billInput.addEventListener("input", calcAmount);
 numPeopleInput.addEventListener("input", calcAmount);
+
+// Event Listener for Reset button
+
+resetBtn.addEventListener("click", resetCalc);
 
 //Initialise calculator
 

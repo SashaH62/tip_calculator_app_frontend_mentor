@@ -28,7 +28,7 @@
   </head>
   <body>
     <header>
-      <h1>SPLI<br />TTER</h1>
+      <h1 class="heading">SPLI<br />TTER</h1>
     </header>
     <main>
       <div class="container">
@@ -70,16 +70,22 @@
                 class="custom-tip-percentage"
               />
             </div>
-
-            <label for="numOfPeople">Number of People</label>
-            <h4 class="warning people-warning">Can't be zero</h4>
-            <input
-              type="number"
-              placeholder="0"
-              name="numOfPeople"
-              class="numPeople"
-              min="0"
-            />
+            <div class="num-people-section">
+              <label for="numOfPeople">Number of People</label>
+              <h4 class="warning people-warning">Can't be zero</h4>
+              <input
+                type="number"
+                placeholder="0"
+                name="numOfPeople"
+                class="numPeople"
+                min="0"
+              />
+              <img
+                src="./images/icon-person.svg"
+                class="number-people-sign"
+                alt=""
+              />
+            </div>
           </div>
         </div>
 
@@ -103,11 +109,11 @@
       </div>
     </main>
 
-    <div class="attribution">
+    <!-- <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
       >. Coded by <a href="#">Sasha Herman</a>.
-    </div>
+    </div> -->
   </body>
 </html>
