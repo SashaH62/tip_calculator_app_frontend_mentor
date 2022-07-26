@@ -73,7 +73,7 @@ h3 {
 }
 
 .tip-percentage-btn:hover {
-  background: var(--primary);
+  background: #9fe8df;
   color: var(--secondary);
 }
 
@@ -89,10 +89,11 @@ h3 {
   color: var(--secondary);
   text-transform: uppercase;
   transition: 0.1s all ease-in-out;
+  opacity: 0.3;
 }
 
 .reset-btn:hover {
-  background: var(--background);
+  background: #9fe8df;
 }
 
 .reset-btn:active {
@@ -110,9 +111,19 @@ h3 {
 input {
   width: 100%;
   background: hsl(189, 41%, 97%);
-  margin-bottom: 1.875rem;
   text-align: right;
+  margin-bottom: 1.875rem;
   color: var(--secondary);
+}
+
+.numPeople {
+  margin-bottom: 1rem;
+}
+
+.numPeople,
+.bill-input {
+  margin-top: 10px;
+  border: 2px solid hsl(189, 41%, 97%);
 }
 
 input:focus {
@@ -161,8 +172,8 @@ label {
   width: 12px;
   height: auto;
   position: absolute;
-  top: 40px;
-  left: 15px;
+  top: 52px;
+  left: 20px;
 }
 
 .num-people-section {
@@ -173,8 +184,8 @@ label {
   width: 13px;
   height: auto;
   position: absolute;
-  top: 42px;
-  left: 15px;
+  top: 54px;
+  left: 20px;
 }
 
 .warning {
@@ -195,8 +206,14 @@ label {
 }
 
 input.custom-tip-percentage {
+  padding: 5.5px;
   width: calc(50% - 0.5rem);
   margin-bottom: 1rem;
+  border: 2px solid hsl(189, 41%, 97%);
+}
+
+input.custom-tip-percentage:focus {
+  border: 2px solid var(--primary);
 }
 
 @media (min-width: 768px) {
@@ -215,7 +232,7 @@ input.custom-tip-percentage {
   color: #fff;
   background: var(--secondary);
   padding: 1.5rem;
-  border-radius: 1.565rem;
+  border-radius: 1.25rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -232,11 +249,12 @@ input.custom-tip-percentage {
   margin-bottom: 1.875rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .total-tip,
 .total-output {
-  font-size: 42px;
+  font-size: 48px;
   color: var(--primary);
 }
 

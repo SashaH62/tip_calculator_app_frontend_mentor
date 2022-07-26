@@ -31,9 +31,12 @@ const resetWarnings = () => {
 // Reset tip calculator to initialised state
 
 const resetCalc = () => {
-  totalTip.innerHTML = "$0";
-  totalAmount.innerHTML = "$0";
-  numPeopleInput.innerHTML = "$0";
+  resetBtn.setAttribute("disabled", true);
+  resetBtn.style.opacity = "";
+  totalTip.innerHTML = "$0.00";
+  totalAmount.innerHTML = "$0.00";
+  numPeopleInput.value = "0";
+  billInput.value = "0";
   removeClass(tipButtons);
   selectedPercentage = 0;
   bill = 0;
@@ -55,10 +58,12 @@ const displayTipTotal = (total, people, perc) => {
 // Checking input values are not 0
 
 function validateForms() {
-  totalTip.innerHTML = "$0";
-  totalAmount.innerHTML = "$0";
+  totalTip.innerHTML = "$0.00";
+  totalAmount.innerHTML = "$0.00";
   switch (true) {
     case bill == 0 && numPeople == 0:
+      resetBtn.setAttribute("disabled", true);
+      resetBtn.style.opacity = "";
       numPeopleWarning.style.display = "inline";
       numPeopleInput.style.border = "2px solid red";
       billWarning.style.display = "inline";
@@ -95,7 +100,12 @@ function retrieveInput() {
 // Tip Percentage Button Function
 
 function calcAmount() {
+  resetBtn.removeAttribute("disabled");
+  resetBtn.style.opacity = "1";
   retrieveInput();
+  if (!tipPercentage) {
+    tipPercentage = 0;
+  }
   if (validateForms()) {
     // If function returns true, output will be displayed
     displayTipTotal(bill, numPeople, tipPercentage);
